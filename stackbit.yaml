@@ -1,0 +1,116 @@
+stackbitVersion: ~0.3.0
+ssgName: gatsby
+publishDir: public
+dataDir: src/assets/fonts/fontello-771c82e0
+pagesDir: src/pages
+models:
+  article:
+    type: page
+    label: Article
+    folder: articles
+    match: '**/*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: string
+        name: layout
+        label: Layout
+      - type: boolean
+        name: draft
+        label: Draft
+      - type: string
+        name: path
+        label: Path
+      - type: string
+        name: category
+        label: Category
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: string
+        name: description
+        label: Description
+  page:
+    type: page
+    label: Page
+    folder: pages
+    match: '**/*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: path
+        label: Path
+  config:
+    type: data
+    label: Config
+    file: config.json
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: css_prefix_text
+        label: Css Prefix Text
+      - type: boolean
+        name: css_use_suffix
+        label: Css Use Suffix
+      - type: boolean
+        name: hinting
+        label: Hinting
+      - type: number
+        name: units_per_em
+        label: Units Per Em
+        subtype: int
+      - type: number
+        name: ascent
+        label: Ascent
+        subtype: int
+      - type: list
+        name: glyphs
+        label: Glyphs
+        items:
+          type: object
+          fields:
+            - type: string
+              name: uid
+              label: Uid
+            - type: string
+              name: css
+              label: Css
+            - type: number
+              name: code
+              label: Code
+              subtype: int
+            - type: string
+              name: src
+              label: Src
+            - type: boolean
+              name: selected
+              label: Selected
+            - type: object
+              name: svg
+              label: Svg
+              fields:
+                - type: string
+                  name: path
+                  label: Path
+                - type: number
+                  name: width
+                  label: Width
+                  subtype: float
+            - type: list
+              name: search
+              label: Search
+              items:
+                type: string
